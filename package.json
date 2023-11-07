@@ -1,0 +1,36 @@
+{
+  "name": "juliasharp",
+  "version": "1.0",
+  "description": "Personal website built on Nuxt 3.",
+  "homepage": "https://julia-sharp.com",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "nuxt",
+    "portfolio",
+    "website"
+  ],
+  "author": {
+    "name": "Julia Sharp",
+    "email": "juliasharp96@gmail.com",
+    "url": "https://julia-sharo.com"
+  },
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@types/node": "^18.17.1",
+    "gsap": "^3.12.2",
+    "nuxt": "^3.6.5",
+    "ogl": "^1.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
