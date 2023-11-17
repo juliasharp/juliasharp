@@ -19,16 +19,29 @@ const content = ref();
 
 <template>
   <main class="Home">
-    <Hero />
-    <!-- <div class="container containerDefault content" ref="content">
-      <h1>Heading Here</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div> -->
+    <div class="HomeContainer">
+      <Hero image-url="pipes-hero.jpg"/>
+      <section class="HomeContent">
+        <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance developer.</h2>
+      </section>
+    </div>
   </main>
 </template>
 
-<style>
+<style lang="scss">
+.Home {
+  position: relative;
+  &Container {
+    margin-left: 215px;
+    margin-right: 45px;
+  }
+  &Content {
+    margin-top: 80px;
+  }
+  &Text {
+    
+  }
+}
 .content {
   margin-top: 100px;
 }

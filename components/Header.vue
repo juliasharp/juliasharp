@@ -22,16 +22,16 @@ const onBurgerClick = () => {
         <ul class="Header-navList">
           <li class="Header-navItem">
             <NuxtLink class="Header-navLink" to="/">
-              <span class="Header-navLinkText">Projects</span>
+              <span class="Header-navLinkText">Home</span>
             </NuxtLink>
           </li>
           <li class="Header-navItem">
-            <NuxtLink class="Header-navLink" to="/">
+            <NuxtLink class="Header-navLink" to="/journal">
               <span class="Header-navLinkText">Journal</span>
             </NuxtLink>
           </li>
           <li class="Header-navItem">
-            <NuxtLink class="Header-navLink" to="/">
+            <NuxtLink class="Header-navLink" to="/contact">
               <span class="Header-navLinkText">Contact</span>
             </NuxtLink>
           </li>
@@ -99,14 +99,16 @@ const onBurgerClick = () => {
       }
     }
     &Item {
-      text-align: center;
+      @media (max-width: 767px) {
+        text-align: center;
+      }
     }
     &Link {
       position: relative;
       display: inline-block;
-      text-transform: uppercase;
+      text-transform: lowercase;
       padding: 18px 15px 19px 80px;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       color: #000;
       @media (max-width: 767px) {
         padding: 10px;
@@ -114,6 +116,7 @@ const onBurgerClick = () => {
       &Text {
         display: inline-block;
         transition: transform .5s cubic-bezier(.165,.84,.44,1);
+        position: relative;
         @media (max-width: 767px) {
           color: #FFF;
           font-size: 30px;
@@ -141,6 +144,16 @@ const onBurgerClick = () => {
       pointer-events: all;
     }
   }
+}
+
+.router-link-active .Header-navLinkText:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #E3C64A;
+  bottom: -2px;
+  left: 0;
 }
 
 </style>
