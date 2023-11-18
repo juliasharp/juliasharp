@@ -1,7 +1,7 @@
 # juliasharp
  portfolio site built with Nuxt3
 
- #installation
+ <h2>installation</h2>
 
  npm install
 
