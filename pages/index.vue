@@ -22,7 +22,23 @@ const content = ref();
     <div class="HomeContainer">
       <Hero image-url="pipes-hero.jpg"/>
       <section class="HomeContent">
-        <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance developer.</h2>
+        <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance creative developer.</h2>
+        <div class="HomeInfo flex">
+          <div class="HomeProjects">
+            <h4>Projects</h4>
+            <ul>
+              <li><strong>Design Camp</strong> 2023</li>
+              <li><strong>Designing in Color</strong> 2021</li>
+              <li><strong>Maison Moderne</strong> 2018</li>
+            </ul>
+          </div>
+          <div class="HomeContact">
+            <h4>Contact</h4>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   </main>
@@ -40,6 +56,13 @@ const content = ref();
   }
   &Text {
     
+  }
+  &Info {
+    display: flex;
+    margin-top: 100px;
+  }
+  &Projects {
+    margin-right: 200px;
   }
 }
 .content {
