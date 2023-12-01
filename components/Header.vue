@@ -108,8 +108,9 @@ const closeMobileMenu = () => {
       display: inline-block;
       text-transform: lowercase;
       padding: 18px 15px 19px 80px;
-      letter-spacing: 1px;
+      letter-spacing: 0.02em;
       color: #000;
+      font-size: 20px;
       @media (max-width: 1000px) {
         padding-left: 45px;
       }
@@ -155,7 +156,7 @@ const closeMobileMenu = () => {
   width: 100%;
   height: 1px;
   background: #E3C64A;
-  bottom: -2px;
+  bottom: 1px;
   left: 0;
 }
 

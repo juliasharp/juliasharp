@@ -23,6 +23,10 @@ const content = ref();
       <Hero image-url="pipes-hero.jpg"/>
       <section class="HomeContent">
         <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance creative developer.</h2>
+        <div class="HomeAbout">
+          <p>Southern California</p>
+          <p>Surfer. Runner. Yogi. Traveler.</p>
+        </div>
         <div class="HomeInfo flex">
           <div class="HomeProjects">
             <h4>Projects</h4>
@@ -49,9 +53,22 @@ const content = ref();
   position: relative;
   &Content {
     margin-top: 80px;
+    font-size: 36px;
   }
   &Text {
-    
+    strong {
+      font-variation-settings: 'wght' 700;
+    }
+  }
+  &About {
+    margin-top: 55px;
+    margin-bottom: 40px;
+    p {
+      margin-left: 55px;
+      &:last-of-type {
+        margin-top: 45px;
+      }
+    }
   }
   &Info {
     display: flex;

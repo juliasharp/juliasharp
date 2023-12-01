@@ -1,10 +1,10 @@
-<script lang="ts">
+<script setup lang="ts">
 const props = defineProps({
   linkText: {
     type: String,
     required: true
   },
-  to: {
+  link: {
     type: String,
     required: true
   }
@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <NuxtLink :to="to" class="Link">
+  <NuxtLink :to="link" class="Link">
     <span class="LinkText">{{ linkText }}</span>
   </NuxtLink>
 </template>
