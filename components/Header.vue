@@ -6,9 +6,9 @@ const onBurgerClick = () => {
   isMobileNavOpen.value = !isMobileNavOpen.value;
 }
 
-// const mobileNavClass = computed((): string => {
-
-// }) 
+const closeMobileMenu = () => {
+  isMobileNavOpen.value = false;
+}
 
 </script>
 
@@ -21,17 +21,17 @@ const onBurgerClick = () => {
       <nav class="Header-nav">
         <ul class="Header-navList">
           <li class="Header-navItem">
-            <NuxtLink class="Header-navLink" to="/">
+            <NuxtLink @click="closeMobileMenu" class="Header-navLink" to="/">
               <span class="Header-navLinkText">Home</span>
             </NuxtLink>
           </li>
           <li class="Header-navItem">
-            <NuxtLink class="Header-navLink" to="/journal">
+            <NuxtLink @click="closeMobileMenu" class="Header-navLink" to="/journal">
               <span class="Header-navLinkText">Journal</span>
             </NuxtLink>
           </li>
           <li class="Header-navItem">
-            <NuxtLink class="Header-navLink" to="/contact">
+            <NuxtLink @click="closeMobileMenu" class="Header-navLink" to="/contact">
               <span class="Header-navLinkText">Contact</span>
             </NuxtLink>
           </li>
@@ -51,10 +51,10 @@ const onBurgerClick = () => {
   pointer-events: none;
   display: flex;
   justify-content: space-between;
-  padding: 62px 80px 0 0;
+  padding: 45px 80px 0 0;
   transition: mix-blend-mode .3s cubic-bezier(.25,.46,.45,.94);
   @media (max-width: 767px) {
-    padding: 25px 25px 0;
+    padding: 20px 20px 0;
     align-items: center;
     z-index: 200;
   }
@@ -110,6 +110,9 @@ const onBurgerClick = () => {
       padding: 18px 15px 19px 80px;
       letter-spacing: 1px;
       color: #000;
+      @media (max-width: 1000px) {
+        padding-left: 45px;
+      }
       @media (max-width: 767px) {
         padding: 10px;
       }

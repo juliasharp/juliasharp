@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <main class="Contact">
+  <main class="Journal">
     <div class="Container">
-      <Hero image-url="julia-contact.jpg" hero-text="about me"/>
+      <h1>Journal Here</h1>
     </div>
   </main>
 </template>

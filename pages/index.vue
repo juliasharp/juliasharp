@@ -19,7 +19,7 @@ const content = ref();
 
 <template>
   <main class="Home">
-    <div class="HomeContainer">
+    <div class="Container">
       <Hero image-url="pipes-hero.jpg"/>
       <section class="HomeContent">
         <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance creative developer.</h2>
@@ -27,9 +27,9 @@ const content = ref();
           <div class="HomeProjects">
             <h4>Projects</h4>
             <ul>
-              <li><strong>Design Camp</strong> 2023</li>
-              <li><strong>Designing in Color</strong> 2021</li>
-              <li><strong>Maison Moderne</strong> 2018</li>
+              <li><strong><NuxtLink class="Link" to="https://designcampla.com/" target="_blank">Design Camp</NuxtLink></strong> 2023</li>
+              <li><strong><NuxtLink class="Link" to="https://designingincolor.com/" target="_blank">Designing in Color</NuxtLink></strong> 2021</li>
+              <li><strong><NuxtLink class="Link" to="https://www.mmstaged.com/" target="_blank">Maison Moderne</NuxtLink></strong> 2018</li>
             </ul>
           </div>
           <div class="HomeContact">
@@ -47,10 +47,6 @@ const content = ref();
 <style lang="scss">
 .Home {
   position: relative;
-  &Container {
-    margin-left: 215px;
-    margin-right: 45px;
-  }
   &Content {
     margin-top: 80px;
   }

@@ -27,7 +27,7 @@ const heroImg = ref();
   <section class="Hero alignCenter">
     <div class="HeroContainer posAbsolute posFit">
       <div ref="heroImg" class="HeroContainerInner">
-        <img class="HeroImage posAbsolute posFit" :src="imageUrl" style="padding-top:45px;">
+        <img class="HeroImage posAbsolute posFit" :src="imageUrl">
         <h1 class="HeroText posAbsolute posAbsoluteCenter marydale">{{ heroText }}</h1>
       </div>
     </div>
@@ -39,7 +39,11 @@ const heroImg = ref();
   position: relative;
   height: calc((var(--vh, 1vh)*100) - 45px);
   &Image {
+    padding-top: 45px;
     object-fit: cover;
+    @media (max-width: 767px) {
+      padding-top: 20px;
+    }
   }
   &Text {
     font-size: 42px;
