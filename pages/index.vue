@@ -31,16 +31,15 @@ const content = ref();
           <div class="HomeProjects">
             <h4>Projects</h4>
             <ul>
-              <li><strong><NuxtLink class="Link" to="https://designcampla.com/" target="_blank">Design Camp</NuxtLink></strong> 2023</li>
-              <li><strong><NuxtLink class="Link" to="https://designingincolor.com/" target="_blank">Designing in Color</NuxtLink></strong> 2021</li>
-              <li><strong><NuxtLink class="Link" to="https://www.mmstaged.com/" target="_blank">Maison Moderne</NuxtLink></strong> 2018</li>
+              <li><CustomLink link="https://designcampla.com/" link-text="Design Camp" /> | 2023</li>
+              <li><CustomLink link="https://designingincolor.com/" link-text="Designing in Color" />  | 2021</li>
+              <li><CustomLink link="https://www.mmstaged.com/" link-text="Maison Moderne" /> | 2018</li>
             </ul>
           </div>
           <div class="HomeContact">
             <h4>Contact</h4>
-            <ul>
-              <li></li>
-            </ul>
+            <p>You can find me on <CustomLink link="https://www.linkedin.com/in/julia-sharp/" link-text="linkedin"/> and <CustomLink link="https://github.com/juliasharp" link-text="github"/>.</p>
+            <p> Or email me <a class="Link" href="mailto:juliasharp96@gmail.com">here</a>.</p>
           </div>
         </div>
       </section>
@@ -76,12 +75,27 @@ const content = ref();
   }
   &Projects {
     margin-right: 200px;
+    h4 {
+      font-variation-settings: 'wght' 700;
+    }
+    ul {
+      font-size: 25px;
+      li {
+        margin-bottom: 5px;
+        a {
+          font-variation-settings: "wght" 500;
+        }
+      }
+    }
   }
-}
-.content {
-  margin-top: 100px;
-}
-p {
-  margin-bottom: 20px;
+  &Contact {
+    h4 {
+      font-variation-settings: 'wght' 700;
+    }
+    p {
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+  }
 }
 </style>
