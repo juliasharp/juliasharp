@@ -1,5 +1,5 @@
 <script setup>
-//import gsap from 'gsap'
+import gsap from 'gsap'
 import { defineProps } from 'vue';
 
 const props = defineProps({
@@ -15,19 +15,28 @@ const props = defineProps({
 
 const heroImg = ref();
 
-// onMounted(() => {
-//   gsap.from(heroImg.value, {
-//     delay: 0.5,
-//     filter: 'blur(10px)',
-//   });
-// })
+onMounted(() => {
+  const tl = gsap.timeline();
+  tl.from(heroImg.value, {
+    delay: 0.7,
+    filter: 'blur(5px)',
+    onComplete: () => {
+      heroImg.value.style.filter = 'none';
+    }
+  });
+  tl.to(heroImg.value, {
+    duration: 1.5,
+    opacity: 1,
+    filter: 'blur(0px)',
+  });
+});
 </script>
 
 <template>
   <section class="Hero alignCenter">
     <div class="HeroContainer posAbsolute posFit">
-      <div ref="heroImg" class="HeroContainerInner">
-        <img class="HeroImage posAbsolute posFit" :src="imageUrl">
+      <div class="HeroContainerInner">
+        <img ref="heroImg" class="HeroImage posAbsolute posFit" :src="imageUrl">
         <h1 class="HeroText posAbsolute posAbsoluteCenter marydale">{{ heroText }}</h1>
       </div>
     </div>

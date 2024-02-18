@@ -1,19 +1,48 @@
 <script setup>
 import gsap from 'gsap';
+import PinSVG from '/src/pin.svg?component';
+import HeartSVG from '/src/heart.svg?component';
 
 const container = ref();
 const content = ref();
+const homeText = ref();
 
-// onMounted(() => {
-//   gsap.from(content.value.children, {
-//     delay: 0.5,
-//     duration: 1,
-//     y: '+100',
-//     autoAlpha: 0,
-//     stagger: 0.25,
-//     ease: 'back.out(1.7)'
-//   });
-// });
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+
+  gsap.from(homeText.value.children, {
+    delay: 0.5,
+    duration: 1,
+    autoAlpha: 0,
+    stagger: 0.25,
+    ease: 'back.out(1.7)'
+  });
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+
+const handleScroll = () => {
+  const scrollY = window.scrollY;
+  console.log("scroll Y: ", scrollY);
+  const scrollThreshold = (homeText.value.offsetTop - window.innerHeight) * 4; // Adjust threshold as needed
+  console.log("scroll threshold: ", scrollThreshold);
+  
+  if (scrollY > scrollThreshold) {
+    console.log("scroll Y greater");
+    gsap.from(heroText.value, {
+      opacity: 0,
+      duration: 0.6,
+      scrollTrigger: {
+        trigger: heroText.value,
+        start: "top 80%", // Adjust this trigger point as needed
+        //end: "bottom 20%", // Adjust this end point as needed
+        scrub: true // Optional smoothing effect
+      }
+    });
+  }
+};
 
 </script>
 
@@ -21,11 +50,15 @@ const content = ref();
   <main class="Home">
     <div class="Container">
       <Hero image-url="pipes-hero.jpg"/>
-      <section class="HomeContent">
+      <section ref="homeText" class="HomeContent">
         <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance creative developer.</h2>
         <div class="HomeAbout">
-          <p>Southern California</p>
-          <p>Surfer. Runner. Yogi. Traveler.</p>
+          <div class="HomeAboutItem alignCenter">
+            <PinSVG></PinSVG><p>Southern California</p>
+          </div>
+          <div class="HomeAboutItem alignCenter">
+            <HeartSVG class="HomeAboutItemHeart"></HeartSVG><p>Surfer. Runner. Yogi. Traveler.</p>
+          </div>
         </div>
         <div class="HomeInfo flex">
           <div class="HomeProjects">
@@ -62,16 +95,20 @@ const content = ref();
   &About {
     margin-top: 55px;
     margin-bottom: 40px;
-    p {
-      margin-left: 55px;
-      &:last-of-type {
-        margin-top: 45px;
+    &Item {
+      margin-top: 45px;
+      p {
+        margin-left: 30px;
+      }
+      &Heart {
+        position: relative;
+        bottom: 4px;
       }
     }
   }
   &Info {
     display: flex;
-    margin-top: 100px;
+    margin-top: 75px;
   }
   &Projects {
     margin-right: 200px;
@@ -96,6 +133,10 @@ const content = ref();
       font-size: 25px;
       margin-bottom: 5px;
     }
+  }
+  &SVG {
+    width: 20px;
+    height: 20px;
   }
 }
 </style>
