@@ -1,11 +1,14 @@
 <script setup>
-import gsap from 'gsap';
 import PinSVG from '/src/pin.svg?component';
 import HeartSVG from '/src/heart.svg?component';
 
 const container = ref();
 const content = ref();
 const homeText = ref();
+
+definePageMeta({
+  layout: 'default'
+})
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);

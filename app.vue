@@ -1,13 +1,18 @@
 <script setup lang="ts">
-onMounted(() => {
-  updateVh();
-  window.addEventListener('resize', updateVh);
-});
+import { useSmoothScroll } from '~/composables/useSmoothScroll'
 
-const updateVh = () => {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
+onMounted(() => {
+  useSmoothScroll()
+})
+// onMounted(() => {
+//   // updateVh();
+//   // window.addEventListener('resize', updateVh);
+// });
+
+// const updateVh = () => {
+//   const vh = window.innerHeight * 0.01;
+//   document.documentElement.style.setProperty('--vh', `${vh}px`);
+// }
 </script>
 
 <template>
@@ -15,7 +20,7 @@ const updateVh = () => {
     <div class="Site-scroll">
       <Header />
       <NuxtPage />
-      <!-- <Footer /> -->
+      <Footer />
     </div>
   </div>
 </template>
