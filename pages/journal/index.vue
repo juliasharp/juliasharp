@@ -7,7 +7,14 @@ definePageMeta({
 <template>
   <main class="Journal">
     <div class="Container">
-      <h1>Journal Here</h1>
+      <img class="mikey-kick" src="../../src/mikey-kick.gif"/>
     </div>
   </main>
 </template>
+
+<style lang="scss">
+.mikey-kick {
+  max-width: 100%;
+  padding: 50px;
+}
+</style>

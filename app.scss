@@ -11,8 +11,10 @@ html {
   overscroll-behavior: none;
   min-height: 100%;
   box-sizing: border-box;
+  background: #F6F2EF;
   color: #000;
-  font: 18px/1.3125 gal-gothic-variable,sans-serif;
+  font: 18px/1.3125 gal-gothic-variable, sans-serif;
+  font-variation-settings: 'wght' 400;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -136,6 +138,9 @@ strong {
 .Container {
   margin-left: 215px;
   margin-right: 45px;
+  @media (max-width: 1600px) {
+    margin-left: 175px;
+  }
   @media (max-width: 1000px) {
     margin-left: 165px;
   }

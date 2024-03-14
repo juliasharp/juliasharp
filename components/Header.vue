@@ -111,6 +111,9 @@ const closeMobileMenu = () => {
       letter-spacing: 0.02em;
       color: #000;
       font-size: 25px;
+      @media (max-width: 1600px) {
+        padding-left: 40px;
+      }
       @media (max-width: 1000px) {
         padding-left: 45px;
       }
