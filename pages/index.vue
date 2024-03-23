@@ -6,46 +6,48 @@ const container = ref();
 const content = ref();
 const homeText = ref();
 
+const animateElement = ref([]);
+
 definePageMeta({
   layout: 'default'
 })
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
+  handleScroll()
 
-  gsap.from(homeText.value.children, {
-    delay: 0.5,
-    duration: 1,
-    autoAlpha: 0,
-    stagger: 0.25,
-    ease: 'back.out(1.7)'
-  });
+  // gsap.from(homeText.value.children, {
+  //   delay: 0.5,
+  //   duration: 1,
+  //   autoAlpha: 0,
+  //   stagger: 0.25,
+  //   ease: 'back.out(1.7)'
+  // });
 });
+
+const handleScroll = (animateElement) => {
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.animate',
+      start: 'top bottom',
+      end: '+=100',
+      // scrub: true,
+      markers: true,
+      toggleActions: 'play pause reverse complete',
+      delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+      ease: "power1.inOut"
+    }
+  })
+
+  tl.to('.animate', {
+    y: -40,
+    autoAlpha: 1,
+    duration: 0.6
+  });
+};
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
+  animateElement.value.forEach(handleScroll);
 });
-
-const handleScroll = () => {
-  const scrollY = window.scrollY;
-  console.log("scroll Y: ", scrollY);
-  const scrollThreshold = (homeText.value.offsetTop - window.innerHeight) * 4; // Adjust threshold as needed
-  console.log("scroll threshold: ", scrollThreshold);
-  
-  if (scrollY > scrollThreshold) {
-    console.log("scroll Y greater");
-    gsap.from(heroText.value, {
-      opacity: 0,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: heroText.value,
-        start: "top 80%", // Adjust this trigger point as needed
-        //end: "bottom 20%", // Adjust this end point as needed
-        scrub: true // Optional smoothing effect
-      }
-    });
-  }
-};
 
 </script>
 
@@ -54,16 +56,18 @@ const handleScroll = () => {
     <div class="Container">
       <Hero image-url="pipes-hero.jpg"/>
       <section ref="homeText" class="HomeContent">
-        <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance creative developer.</h2>
-        <div class="HomeAbout">
-          <div class="HomeAboutItem alignCenter">
-            <PinSVG></PinSVG><p>Southern California</p>
-          </div>
-          <div class="HomeAboutItem alignCenter">
-            <HeartSVG class="HomeAboutItemHeart"></HeartSVG><p>Surfer. Runner. Yogi. Traveler.</p>
+        <div ref="animateElement" class="HomeContentTop">
+          <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance creative developer.</h2>
+          <div class="HomeAbout">
+            <div class="HomeAboutItem alignCenter">
+              <PinSVG></PinSVG><p>Southern California</p>
+            </div>
+            <div class="HomeAboutItem alignCenter">
+              <HeartSVG class="HomeAboutItemHeart"></HeartSVG><p>Surfer. Runner. Yogi. Traveler.</p>
+            </div>
           </div>
         </div>
-        <div class="HomeInfo flex">
+        <div ref="animateElement" class="HomeInfo flex">
           <div class="HomeProjects">
             <h4>Projects</h4>
             <ul>
@@ -87,8 +91,13 @@ const handleScroll = () => {
 .Home {
   position: relative;
   &Content {
-    margin-top: 80px;
+    margin-top: 120px;
     font-size: 36px;
+    &Top {
+      //transition: transform 0.65s cubic-bezier(0.44, 0.24, 0.16, 1) 0s, opacity 0.65s cubic-bezier(0.44, 0.24, 0.16, 1) 0s;
+      opacity: 0;
+      visibility: hidden;
+    }
   }
   &Text {
     strong {
