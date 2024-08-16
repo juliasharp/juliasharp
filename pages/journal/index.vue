@@ -84,6 +84,7 @@ const currentYear = computed(() => new Date().getFullYear());
   width: 100%;
   height: 100%;
   object-position: center;
+  box-shadow: none;
   @media (max-width: 1180px) {
     height: auto;
     position: relative;

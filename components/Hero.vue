@@ -47,6 +47,7 @@ onMounted(() => {
   &Image {
     padding-top: 50px;
     object-fit: cover;
+    box-shadow: none;
   }
   &Text {
     font-size: 42px;
