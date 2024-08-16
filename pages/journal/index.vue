@@ -96,6 +96,7 @@ const currentYear = computed(() => new Date().getFullYear());
   margin-top: 120px;
   @media (max-width: 767px) {
     margin-top: 50px;
+    margin-bottom: 75px;
   }
   @media (max-width: 414px) {
     margin-top: 55px;
