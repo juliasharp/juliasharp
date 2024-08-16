@@ -20,7 +20,6 @@ onMounted(() => {
     <div class="Site-scroll">
       <Header />
       <NuxtPage />
-      <Footer />
     </div>
   </div>
 </template>

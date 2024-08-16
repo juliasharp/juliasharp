@@ -78,7 +78,7 @@ const init = () => {
   const fontSize = fontSizes[size];
 
   const canvasText = createTextCanvas({
-    text: 'Hello',
+    text: 'howdy',
     fontSize,
     width: state.width,
     height: state.height,

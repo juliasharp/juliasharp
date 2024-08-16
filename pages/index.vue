@@ -2,41 +2,62 @@
 import PinSVG from '/src/pin.svg?component';
 import HeartSVG from '/src/heart.svg?component';
 
-const container = ref();
-const content = ref();
 const homeText = ref();
-
-const animateElement = ref([]);
+const homeProjects = ref();
+const homeContact = ref();
 
 definePageMeta({
   layout: 'default'
 })
 
 onMounted(() => {
-  handleScroll()
+  gsap.from(homeText.value.children, {
+    delay: 0.3, // Start a bit sooner
+    duration: 0.8, // Shorten the duration for quickness
+    autoAlpha: 0,
+    y: 20, // Add a slight vertical movement for smoothness
+    stagger: 0.5, // Faster stagger for a more fluid entrance
+    ease: 'power3.out' // Smoother easing function
+  });
 
-  // gsap.from(homeText.value.children, {
-  //   delay: 0.5,
-  //   duration: 1,
-  //   autoAlpha: 0,
-  //   stagger: 0.25,
-  //   ease: 'back.out(1.7)'
-  // });
+  gsap.from([homeProjects.value.querySelector('h4'), homeContact.value.querySelector('h4')], {
+    delay: 0.3, // Slightly later to allow HomeText to finish
+    duration: 0.8,
+    autoAlpha: 0,
+    y: 20,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: homeProjects.value, // Start animation when HomeProjects comes into view
+      start: 'top 100%', // Adjust as needed to control when the animation starts
+    }
+  });
+
+  // Animation for HomeProjects ul and HomeContact div together
+  gsap.from([homeProjects.value.querySelector('ul'), homeContact.value.querySelector('div')], {
+    delay: 0.75, // Slightly delayed to align with the h4 elements' animation
+    duration: 0.8,
+    autoAlpha: 0,
+    y: 20,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: homeProjects.value, // Start animation when HomeProjects comes into view
+      start: 'top 100%', // Adjust as needed to control when the animation starts
+    }
+  });
+
+  handleScroll();
 });
 
-const handleScroll = (animateElement) => {
+
+const handleScroll = () => {
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.animate',
       start: 'top bottom',
       end: '+=100',
-      // scrub: true,
-      markers: true,
-      toggleActions: 'play pause reverse complete',
-      delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
       ease: "power1.inOut"
     }
-  })
+  });
 
   tl.to('.animate', {
     y: -40,
@@ -45,19 +66,17 @@ const handleScroll = (animateElement) => {
   });
 };
 
-onUnmounted(() => {
-  animateElement.value.forEach(handleScroll);
-});
 
+const currentYear = computed(() => new Date().getFullYear());
 </script>
 
 <template>
   <main class="Home">
     <div class="Container">
-      <Hero image-url="pipes-hero.jpg"/>
-      <section ref="homeText" class="HomeContent">
-        <div ref="animateElement" class="HomeContentTop">
-          <h2 class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance creative developer.</h2>
+      <Hero hero-text="howdy" image-url="pipes-hero.jpg"/>
+      <section class="HomeContent">
+        <div class="HomeContentTop animate">
+          <h2 ref="homeText" class="HomeText">I'm <strong>Julia Sharp</strong>, a freelance creative developer.</h2>
           <div class="HomeAbout">
             <div class="HomeAboutItem alignCenter">
               <PinSVG></PinSVG><p>Southern California</p>
@@ -67,23 +86,28 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
-        <div ref="animateElement" class="HomeInfo flex">
-          <div class="HomeProjects">
+        <div class="HomeInfo flex animate">
+          <div ref="homeProjects" class="HomeProjects">
             <h4>Projects</h4>
             <ul>
+              <li><CustomLink link="https://just.design" link-text="JUST Design" /> | 2024</li>
               <li><CustomLink link="https://designcampla.com/" link-text="Design Camp" /> | 2023</li>
               <li><CustomLink link="https://designingincolor.com/" link-text="Designing in Color" />  | 2021</li>
               <li><CustomLink link="https://www.mmstaged.com/" link-text="Maison Moderne" /> | 2018</li>
             </ul>
           </div>
-          <div class="HomeContact">
+          <div ref="homeContact" class="HomeContact">
             <h4>Contact</h4>
-            <p>You can find me on <CustomLink link="https://www.linkedin.com/in/julia-sharp/" link-text="linkedin"/> and <CustomLink link="https://github.com/juliasharp" link-text="github"/>.</p>
-            <p> Or email me <a class="Link" href="mailto:juliasharp96@gmail.com">here</a>.</p>
+            <div>
+              <p>You can find me on <CustomLink link="https://www.linkedin.com/in/julia-sharp/" link-text="linkedin"/> and <CustomLink link="https://github.com/juliasharp" link-text="github"/>.</p>
+              <p> Or email me <a class="Link" href="mailto:juliaestellesharp@gmail.com">here</a>.</p>
+            </div>
           </div>
         </div>
       </section>
     </div>
+    <hr class="footer-divider">
+    <p class="copyright">copyright &copy; {{ currentYear }} | julia sharp | all rights reserved.</p>
   </main>
 </template>
 
@@ -93,6 +117,9 @@ onUnmounted(() => {
   &Content {
     margin-top: 120px;
     font-size: 36px;
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
     &Top {
       //transition: transform 0.65s cubic-bezier(0.44, 0.24, 0.16, 1) 0s, opacity 0.65s cubic-bezier(0.44, 0.24, 0.16, 1) 0s;
       opacity: 0;
@@ -121,9 +148,15 @@ onUnmounted(() => {
   &Info {
     display: flex;
     margin-top: 75px;
+    padding-bottom: 90px;
+    @media (max-width: 767px) {
+      display: block;
+    }
   }
   &Projects {
-    margin-right: 200px;
+    @media (min-width: 768px){
+      margin-right: 200px;
+    }
     h4 {
       font-variation-settings: 'wght' 700;
     }
@@ -150,5 +183,21 @@ onUnmounted(() => {
     width: 20px;
     height: 20px;
   }
+}
+
+.footer-divider {
+  position: absolute;
+  bottom: 38px;
+  left: 25px;
+  width: calc(100% - 50px);
+  border-width: 0.5px;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 12px;
+  left: 25px;
+  color: #000;
+  font-size: 15px;
 }
 </style>

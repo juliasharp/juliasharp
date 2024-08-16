@@ -14,6 +14,7 @@ const closeMobileMenu = () => {
 
 <template>
   <header :class="isMobileNavOpen ? 'mobile-nav-open' : ''" class="Header has-transition">
+    <Logo />
     <div @click="onBurgerClick" class="Header-burger">
       <Burger :is-open="isMobileNavOpen"/>
     </div>
@@ -49,14 +50,17 @@ const closeMobileMenu = () => {
   right: 0;
   left: 0;
   pointer-events: none;
-  display: flex;
+  // display: flex;
   justify-content: space-between;
   padding: 45px 80px 0 0;
   transition: mix-blend-mode .3s cubic-bezier(.25,.46,.45,.94);
-  @media (max-width: 767px) {
-    padding: 20px 20px 0;
+  @media (max-width: 1023px) {
+    padding: 50px 30px 0;
     align-items: center;
     z-index: 200;
+  }
+  @media (max-width: 767px) {
+    padding: 20px 20px 0;
   }
   &-burger {
     width: 20px;
@@ -64,12 +68,12 @@ const closeMobileMenu = () => {
     z-index: 10;
     display: block;
     position: relative;
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: none;
     }
   }
   &-nav {
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       background-color: #004a49;
       display: flex;
       height: 100%;
@@ -79,7 +83,7 @@ const closeMobileMenu = () => {
       transform: translateY(100%);
     }
     &Wrapper {
-      @media (max-width: 767px) {
+      @media (max-width: 1023px) {
         position: absolute;
         top: 0;
         right: 0;
@@ -92,14 +96,14 @@ const closeMobileMenu = () => {
       }
     }
     &List {
-      @media (max-width: 767px) {
+      @media (max-width: 1023px) {
         height: 100vh;
         margin-top: 22vh;
         margin-top: calc(var(--vh, 1vh)*22);
       }
     }
     &Item {
-      @media (max-width: 767px) {
+      @media (max-width: 1023px) {
         text-align: center;
       }
     }
@@ -114,17 +118,17 @@ const closeMobileMenu = () => {
       @media (max-width: 1600px) {
         padding-left: 40px;
       }
-      @media (max-width: 1000px) {
+      @media (max-width: 1200px) {
         padding-left: 45px;
       }
-      @media (max-width: 767px) {
+      @media (max-width: 1023px) {
         padding: 10px;
       }
       &Text {
         display: inline-block;
         transition: transform .5s cubic-bezier(.165,.84,.44,1);
         position: relative;
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
           color: #FFF;
           font-size: 30px;
         }

@@ -1,6 +1,4 @@
 <script setup>
-import { defineProps } from 'vue';
-
 const props = defineProps({
   imageUrl: {
     type: String,
@@ -8,7 +6,7 @@ const props = defineProps({
   },
   heroText: {
     type: String,
-    default: 'hello'
+    default: ''
   }
 });
 
@@ -36,7 +34,7 @@ onMounted(() => {
     <div class="HeroContainer posAbsolute posFit">
       <div class="HeroContainerInner">
         <img ref="heroImg" class="HeroImage posAbsolute posFit" :src="imageUrl">
-        <h1 class="HeroText posAbsolute posAbsoluteCenter marydale">{{ heroText }}</h1>
+        <h1 v-if="heroText" class="HeroText posAbsolute posAbsoluteCenter marydale">{{ heroText }}</h1>
       </div>
     </div>
   </section>
@@ -45,13 +43,10 @@ onMounted(() => {
 <style scoped lang="scss">
 .Hero {
   position: relative;
-  height: calc((var(--vh, 1vh)*100) - 45px);
+  height: calc((var(--vh, 1vh)*100) - 50px);
   &Image {
-    padding-top: 45px;
+    padding-top: 50px;
     object-fit: cover;
-    @media (max-width: 767px) {
-      padding-top: 20px;
-    }
   }
   &Text {
     font-size: 42px;

@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <NuxtLink :to="link" class="Link">
+  <NuxtLink :to="link" class="Link" target="_blank">
     <span class="LinkText">{{ linkText }}</span>
   </NuxtLink>
 </template>
