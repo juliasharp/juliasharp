@@ -201,10 +201,40 @@ const currentYear = computed(() => new Date().getFullYear());
   text-transform: none;
   font-weight: normal;
   color: rgb(0, 0, 0);
-  margin-bottom: calc(13.57px + 0.446828vw)
+  margin-bottom: calc(13.57px + 0.446828vw);
+  @media (max-width: 1439px) {
+    margin-bottom: calc(11.42px + 0.596125vw);
+  }
+  @media (max-width: 767px) {
+    margin-bottom: calc(12.23px + 0.4914vw);
+  }
 }
 
 input {
+  appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background: transparent;
+  border: 2px solid;
+  height: 60px;
+  text-transform: none;
+  letter-spacing: 0px;
+  border-radius: 0px;
+  color: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: left;
+  box-shadow: none;
+  padding: 2px 1em 1px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   padding-left: 0px;
   padding-right: 0px;
   border-top: 0px rgb(240, 240, 238);
@@ -224,6 +254,23 @@ input {
 }
 
 label {
+  position: absolute;
+  font-style: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  top: 0px;
+  left: 2px;
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  pointer-events: none;
+  margin: 0px 1em;
+  color: inherit;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform-origin: 0% 50%;
   position: absolute;
   padding: 0px 0px 8px;
   left: 0px;
