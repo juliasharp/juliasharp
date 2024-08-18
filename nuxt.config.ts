@@ -12,15 +12,6 @@ export default defineNuxtConfig({
       }),
     ],
   },
-  $production: {
-    scripts: {
-      registry: {
-        googleAnalytics: {
-          id: 'G-05WM72X1T2'
-        }
-      }
-    },
-  },
   imports: {
     dirs: ['utils'],
   }

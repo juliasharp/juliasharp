@@ -33,6 +33,7 @@
     "vite-svg-loader": "^5.1.0"
   },
   "dependencies": {
+    "@gtm-support/vue-gtm": "^3.1.0",
     "@studio-freight/lenis": "^1.0.39",
     "normalize.css": "^8.0.1",
     "sass": "^1.77.8"
