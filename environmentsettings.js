@@ -1,11 +1,11 @@
 export const GlobalSettings = {
   development: {
-    googleTagManagerKey: 'G-1K9CBK4EH2',
+    googleTagManagerKey: 'GTM-TWCN6PG6',
     googleTagManagerEnabled: false,
     googleTagManagerDebug: false,
   },
   production: {
-    googleTagManagerKey: 'G-1K9CBK4EH2',
+    googleTagManagerKey: 'GTM-TWCN6PG6',
     googleTagManagerEnabled: true,
     googleTagManagerDebug: true,
   }

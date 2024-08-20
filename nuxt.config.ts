@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     public: {
       sitename: 'Julia Sharp | Portfolio',
       companyname: 'Julia Sharp',
-      gtm_id: GlobalSettings[appEnv].googleTagManagerKey || 'G-1K9CBK4EH2',
+      gtagId: 'G-1K9CBK4EH2',
+      gtm_id: GlobalSettings[appEnv].googleTagManagerKey || 'GTM-TWCN6PG6',
       gtm_enabled: GlobalSettings[appEnv].googleTagManagerEnabled || true,
       gtm_debug: GlobalSettings[appEnv].googleTagManagerDebug || false,
     }
