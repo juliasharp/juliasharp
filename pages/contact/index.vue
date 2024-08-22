@@ -1,5 +1,9 @@
 <script>
 import IlySVG from '/src/love.svg?component';
+
+useHead({
+  title: 'Julia Sharp | Contact'
+})
 </script>
 
 <template>
