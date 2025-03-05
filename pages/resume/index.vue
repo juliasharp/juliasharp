@@ -62,7 +62,7 @@
 <style lang="scss" scoped>
 .resume-inner {
   max-width: 1000px;
-  margin: 180px auto 100px;
+  margin: 120px auto;
   padding: 0 50px;
   h2 {
     font-family: 'Editorial';
