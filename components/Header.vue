@@ -32,6 +32,11 @@ const closeMobileMenu = () => {
             </NuxtLink>
           </li>
           <li class="Header-navItem">
+            <NuxtLink @click="closeMobileMenu" class="Header-navLink" to="/resume">
+              <span class="Header-navLinkText">Resume</span>
+            </NuxtLink>
+          </li>
+          <li class="Header-navItem">
             <NuxtLink @click="closeMobileMenu" class="Header-navLink" to="/contact">
               <span class="Header-navLinkText">Contact</span>
             </NuxtLink>
