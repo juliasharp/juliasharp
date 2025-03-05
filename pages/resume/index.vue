@@ -37,16 +37,16 @@
       <div class="certifications">
         <h2>Certifications</h2>
         <div class="cert flex">
-          <p><span>Salesforce</span> Certified Administrator</p>
-          <p>Apr 2022</p>
+          <p><span>Salesforce</span> Certified AI Associate</p>
+          <p>Apr 2024</p>
         </div>
         <div class="cert flex">
           <p><span>Salesforce</span> Certified Platform App Builder</p>
           <p>Jan 2023</p>
         </div>
         <div class="cert flex">
-          <p><span>Salesforce</span> Certified AI Associate</p>
-          <p>Apr 2024</p>
+          <p><span>Salesforce</span> Certified Administrator</p>
+          <p>Apr 2022</p>
         </div>
         <div class="cert flex">
           <p><span>Udemy</span> Unit Testing</p>

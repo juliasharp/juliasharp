@@ -24,8 +24,8 @@ useHead({
 <style lang="scss">
 .Contact {
   &Content {
-    margin: 80px 0;
-    font-size: 28px;
+    margin: 80px 40px;
+    font-size: 26px;
     line-height: 1.5;
     @media (max-width: 767px) {
       font-size: 18px;
