@@ -70,13 +70,18 @@
   }
 }
 
+.work-experience {
+  margin-bottom: 40px;
+}
+
 .company {
-  font-weight: 700;
+  font-variation-settings: "wght" 600;
+  margin-bottom: 10px;
 }
 
 .role {
   font-style: italic;
-  font-weight: 500;
+  font-variation-settings: "wght" 400;
 }
 
 .flex {
