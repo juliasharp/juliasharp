@@ -1,7 +1,7 @@
 <template>
   <main class="Resume">
     <div class="Container">
-      <Hero image-url="resume-img.JPG" hero-text="resume / cv"/>
+      <Hero image-url="resume-img.jpg" hero-text="resume / cv"/>
     </div>
     <div class="resume-inner">
       <h2>Work Experience</h2>
