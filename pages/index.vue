@@ -129,7 +129,7 @@ const currentYear = computed(() => new Date().getFullYear());
   }
   &Text {
     strong {
-      font-variation-settings: 'wght' 700;
+      font-variation-settings: 'wght' 500;
     }
   }
   &About {
@@ -159,7 +159,7 @@ const currentYear = computed(() => new Date().getFullYear());
       margin-right: 200px;
     }
     h4 {
-      font-variation-settings: 'wght' 700;
+      font-variation-settings: 'wght' 500;
     }
     ul {
       font-size: 25px;
@@ -173,7 +173,7 @@ const currentYear = computed(() => new Date().getFullYear());
   }
   &Contact {
     h4 {
-      font-variation-settings: 'wght' 700;
+      font-variation-settings: 'wght' 500;
     }
     p {
       font-size: 25px;
