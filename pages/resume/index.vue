@@ -6,7 +6,7 @@
     <div class="resume-inner">
       <h2>Work Experience</h2>
       <div class="work-experience">
-        <div class="flex">
+        <div class="flex work-info">
           <h3 class="company">Salesforce</h3>
           <p>May 2022 - Sep 2024</p>
         </div>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="work-experience">
-        <div class="flex">
+        <div class="flex work-info">
           <h3 class="company">1Point21 Interactive</h3>
           <p>Jan 2020 - Apr 2022</p>
         </div>
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="work-experience">
-        <div class="flex">
+        <div class="flex work-info">
           <h3 class="company">Yardi Systems Inc.</h3>
           <p>Jan 2019 - Dec 2019</p>
         </div>
@@ -64,9 +64,16 @@
   max-width: 1000px;
   margin: 120px auto;
   padding: 0 50px;
+  @media (max-width: 600px) {
+    margin: 60px auto;
+  }
   h2 {
     font-family: 'Editorial';
-    font-size: 42px;;
+    font-size: 42px;
+    padding-bottom: 30px;
+    @media (max-width: 600px) {
+      font-size: 32px;
+    }
   }
 }
 
@@ -76,6 +83,11 @@
 
 .company {
   font-variation-settings: "wght" 600;
+  margin-bottom: 0px;
+  margin-top: 0;
+}
+
+.work-info {
   margin-bottom: 10px;
 }
 
@@ -88,6 +100,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 600px) {
+    display: block;
+  }
 }
 
 .description {
@@ -100,10 +115,6 @@
 
 .certifications {
   margin-top: 100px;
-}
-
-.certifications h2 {
-  padding-bottom: 20px;
 }
 
 .cert {
