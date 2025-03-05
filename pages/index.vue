@@ -90,6 +90,7 @@ const currentYear = computed(() => new Date().getFullYear());
           <div ref="homeProjects" class="HomeProjects">
             <h4>Projects</h4>
             <ul>
+              <li><CustomLink link="https://data-witches.com" link-text="Data Witches" /> | 2025</li>
               <li><CustomLink link="https://just.design" link-text="JUST Design" /> | 2024</li>
               <li><CustomLink link="https://designcampla.com/" link-text="Design Camp" /> | 2023</li>
               <li><CustomLink link="https://designingincolor.com/" link-text="Designing in Color" />  | 2021</li>
