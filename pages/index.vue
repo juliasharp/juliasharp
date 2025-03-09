@@ -101,7 +101,7 @@ const currentYear = computed(() => new Date().getFullYear());
             <h4>Contact</h4>
             <div>
               <p>You can find me on <CustomLink link="https://www.linkedin.com/in/julia-sharp/" link-text="linkedin"/> and <CustomLink link="https://github.com/juliasharp" link-text="github"/>.</p>
-              <p> Or email me <a class="Link" href="mailto:juliaestellesharp@gmail.com">here</a>.</p>
+              <p> Or email me <a class="Link" href="mailto:julia@juliasharp.co">here</a>.</p>
             </div>
           </div>
         </div>
