@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { useSmoothScroll } from '~/composables/useSmoothScroll';
-import { useHead } from 'unhead';
-
-
 
 useHead({
   title: 'Julia Sharp',
