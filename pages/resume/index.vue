@@ -65,7 +65,8 @@
   margin: 120px auto;
   padding: 0 50px;
   @media (max-width: 600px) {
-    margin: 60px auto;
+    margin: 60px auto 85px;
+    padding: 0 30px;
   }
   h2 {
     font-family: 'Editorial';
@@ -115,6 +116,9 @@
 
 .certifications {
   margin-top: 100px;
+  @media (max-width: 600px) {
+    margin-top: 60px;
+  }
 }
 
 .cert {

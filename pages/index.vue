@@ -138,6 +138,7 @@ const currentYear = computed(() => new Date().getFullYear());
     margin-bottom: 40px;
     @media (max-width: 767px) {
       margin-bottom: 30px;
+      margin-top: 35px;
     }
     &Item {
       margin-top: 45px;
