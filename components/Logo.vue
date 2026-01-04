@@ -21,7 +21,6 @@ import JSLogo from '/src/juliasharp.svg?component';
   @media (max-width: 767px) {
     width: 160px;
     right: 20px;
-    top: 17px;
   }
 }
 

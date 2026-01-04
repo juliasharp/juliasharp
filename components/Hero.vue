@@ -52,6 +52,9 @@ onMounted(() => {
   &Text {
     font-size: 42px;
     color: #FFFFFF;
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
   }
 }
 </style>

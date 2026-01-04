@@ -119,6 +119,7 @@ const currentYear = computed(() => new Date().getFullYear());
     margin-top: 120px;
     font-size: 36px;
     @media (max-width: 767px) {
+      margin-top: 90px;
       font-size: 24px;
     }
     &Top {
@@ -135,8 +136,14 @@ const currentYear = computed(() => new Date().getFullYear());
   &About {
     margin-top: 55px;
     margin-bottom: 40px;
+    @media (max-width: 767px) {
+      margin-bottom: 30px;
+    }
     &Item {
       margin-top: 45px;
+      @media (max-width: 767px) {
+        margin-top: 30px;
+      }
       p {
         margin-left: 30px;
       }
@@ -163,6 +170,9 @@ const currentYear = computed(() => new Date().getFullYear());
     }
     ul {
       font-size: 25px;
+      @media (max-width: 767px) {
+        font-size: 21px;
+      }
       li {
         margin-bottom: 5px;
         a {
@@ -178,6 +188,9 @@ const currentYear = computed(() => new Date().getFullYear());
     p {
       font-size: 25px;
       margin-bottom: 5px;
+      @media (max-width: 767px) {
+        font-size: 21px;
+      }
     }
   }
   &SVG {
